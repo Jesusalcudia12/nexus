@@ -1,6 +1,6 @@
 <?php
-// auth/actualizar_password.php
-require_once '../../includes/config.php'; // Ruta corregida hacia la carpeta includes
+// actualizar_password.php - ESTRUCTURA PLANA (RAÍZ)
+require_once 'config.php'; // Ruta corregida: ahora está en la misma carpeta
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['email_reset'])) {
@@ -10,13 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['email_reset'])) {
 
     // 1. Validar coincidencia
     if ($pass1 !== $pass2) {
-        header("Location: ../nueva_contraseña.php?error=mismatch");
+        // Ruta corregida: quitamos el ../
+        header("Location: nueva_contrasena.php?error=mismatch");
         exit();
     }
 
-    // 2. Validar fortaleza (Mismas reglas que en el registro)
+    // 2. Validar fortaleza
     if (strlen($pass1) < 8 || !preg_match("/[A-Z]/", $pass1) || !preg_match("/[0-9]/", $pass1)) {
-        header("Location: ../nueva_contraseña.php?error=weak");
+        // Ruta corregida: quitamos el ../
+        header("Location: nueva_contrasena.php?error=weak");
         exit();
     }
 
@@ -24,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['email_reset'])) {
     $password_encriptada = password_hash($pass1, PASSWORD_BCRYPT);
 
     // 4. Actualizar base de datos y limpiar tokens de seguridad
-    // Usamos $conn y la columna 'email' según tu estructura previa
     $sql = "UPDATE usuarios SET 
             password = '$password_encriptada', 
             token_recuperacion = NULL, 
@@ -35,16 +36,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['email_reset'])) {
         // Limpiar la sesión de recuperación
         unset($_SESSION['email_reset']);
         
-        // Notificación de éxito con estilo Nexus
+        // Notificación de éxito con estilo Nexus - Ruta corregida a login.php
         echo "<script>
                 alert('Protocolo de seguridad completado: Contraseña actualizada en NEXUS.OS'); 
-                window.location.href='../login.php?reset=success';
+                window.location.href='login.php?reset=success';
               </script>";
     } else {
         echo "<script>alert('Error en el nodo de datos. Intente de nuevo.'); window.history.back();</script>";
     }
 } else {
-    header("Location: ../login.php");
+    // Ruta corregida: quitamos el ../
+    header("Location: login.php");
     exit();
 }
 ?>
