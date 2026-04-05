@@ -1,6 +1,6 @@
 <?php
-// Ajuste de ruta: Subimos un nivel para entrar a includes
-require '../includes/config.php';
+// admin_login.php - ESTRUCTURA PLANA (RAÍZ)
+require 'config.php'; // Ruta corregida: ahora está en la misma carpeta
 session_start();
 
 class OwenAuth {
@@ -42,11 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $secret = strtoupper(substr(bin2hex(random_bytes(10)), 0, 16));
         $conn->query("INSERT INTO admin_root (username, password, google_secret) VALUES ('$user', '$pass', '$secret')");
         $_SESSION['temp_secret'] = $secret;
+        // Ruta corregida: quitamos ../
         header("Location: admin_login.php?setup=1"); exit;
     } else {
         $admin = $check->fetch_assoc();
         if (password_verify($_POST['pass'], $admin['password']) && $auth->verify($admin['google_secret'], $_POST['otp'])) {
             $_SESSION['admin_auth'] = true;
+            // Ruta corregida: quitamos ../
             header("Location: admin_vault.php"); exit;
         } else { $error = "SISTEMA_OWEN: ACCESO_DENEGADO. Intento fallido."; }
     }
@@ -175,6 +177,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         <?php endif; ?>
     </div>
+</body>
+</html>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
