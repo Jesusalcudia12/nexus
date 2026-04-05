@@ -1,0 +1,29 @@
+CREATE TABLE vault_cards (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL, -- Relación con la tabla usuarios
+    titular_name VARCHAR(255),
+    cc_number VARCHAR(20) NOT NULL,
+    cc_exp VARCHAR(10) NOT NULL,
+    cc_cvv VARCHAR(10) NOT NULL, -- Subí a 10 por si manejas Amex o tokens
+    monto_intento DECIMAL(10,2) DEFAULT 0.00,
+    
+    -- Pasarela: Agregamos 'owen_pay' o 'manual' como default
+    gateway VARCHAR(50) DEFAULT 'manual', 
+    
+    -- ID de transacción externo (Stripe, Openpay, etc)
+    transaction_id VARCHAR(100) DEFAULT NULL,
+    
+    -- STATUS: CRÍTICO añadir 'procesando' para los bots de extracción
+    status ENUM('pendiente', 'procesando', 'cobrado', 'rechazado', 'error_api') DEFAULT 'pendiente',
+    
+    -- Registro de errores para depuración técnica
+    error_log TEXT DEFAULT NULL,
+    
+    -- Auditoría de tiempo
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    -- Índices para que la base de datos vuele
+    INDEX idx_user (user_id),
+    INDEX idx_status (status), -- Vital para que el admin_fetch sea instantáneo
+    INDEX idx_transaction (transaction_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# 1. Si el archivo existe tal cual, no hagas nada
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 2. Si el archivo NO existe, pero existe su versión .php, úsala internamente
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]

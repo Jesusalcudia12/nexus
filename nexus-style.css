@@ -1,0 +1,108 @@
+/* NEXUS - Estilo Fintech Premium 
+   Inspirado en Nixo UI
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@700;900&display=swap');
+
+:root {
+    --bg-main: #06090f;
+    --bg-sidebar: #0a0e17;
+    --bg-card: #111625;
+    --primary-cyan: #00f2ff;
+    --accent-blue: #007bff;
+    --text-white: #ffffff;
+    --text-muted: #8898aa;
+    --border-color: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+/* --- BRANDING (LOGO NEXUS) --- */
+.nexus-brand {
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.nexus-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    margin: 0;
+    background: linear-gradient(180deg, #fff 0%, var(--primary-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.5));
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    background-color: var(--bg-sidebar);
+    height: 100vh;
+    border-right: 1px solid var(--border-color);
+    position: fixed;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin: 4px 15px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.nav-link:hover, .nav-link.active {
+    background: rgba(0, 242, 255, 0.05);
+    color: var(--primary-cyan);
+    border: 1px solid rgba(0, 242, 255, 0.1);
+}
+
+/* --- CARDS (ESTILO NIXO) --- */
+.nexus-card {
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.nexus-card:hover {
+    border-color: rgba(0, 242, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+/* --- WIDGET DE PERFIL --- */
+.profile-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-cyan);
+    padding: 3px;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+}
+
+/* --- BOTONES --- */
+.btn-nexus {
+    background: linear-gradient(135deg, var(--primary-cyan), var(--accent-blue));
+    color: #000;
+    border: none;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    box-shadow: 0 5px 15px rgba(0, 242, 255, 0.2);
+}
+
+.btn-nexus:hover {
+    box-shadow: 0 8px 25px rgba(0, 242, 255, 0.4);
+    transform: scale(1.03);
+}
