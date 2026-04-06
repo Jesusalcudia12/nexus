@@ -1,6 +1,6 @@
 <?php
 // webhook_confirmo.php
-require '../includes/config.php'; // Ajustado a tu estructura de carpetas
+require 'config.php'; // Ajustado a tu estructura de carpetas
 
 // Confirmo envía los datos en formato JSON
 $json = file_get_contents('php://input');
