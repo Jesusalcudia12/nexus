@@ -1,6 +1,6 @@
 <?php
 // auth/procesar_registro.php
-include '../config.php'; // Incluimos la configuración unificada
+include 'config.php'; // Incluimos la configuración unificada
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitización de entradas
@@ -12,14 +12,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // 1. Validar que las contraseñas coincidan
     if ($pass1 !== $pass2) {
-        header("Location: ../registro.php?error=password_mismatch");
+        header("Location: registro.php?error=password_mismatch");
         exit();
     }
 
     // 2. REGLAS PARA LA CONTRASEÑA (Seguridad NEXUS)
     // Mínimo 8 caracteres, al menos una letra mayúscula y un número
     if (strlen($pass1) < 8 || !preg_match("/[A-Z]/", $pass1) || !preg_match("/[0-9]/", $pass1)) {
-        header("Location: ../registro.php?error=password_weak");
+        header("Location: registro.php?error=password_weak");
         exit();
     }
 
@@ -40,10 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // FUNCIÓN DE NOTIFICACIÓN A TELEGRAM ELIMINADA
 
         // Redirigir al login con mensaje de éxito
-        header("Location: ../login.php?registro=success");
+        header("Location: login.php?registro=success");
     } else {
         // Error de base de datos (Ej: email duplicado)
-        header("Location: ../registro.php?error=db_error");
+        header("Location: registro.php?error=db_error");
     }
     
     $stmt->close();
