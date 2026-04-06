@@ -1,6 +1,6 @@
 <?php
 // deposito_exitoso.php
-require '../includes/config.php';
+require 'config.php';
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -27,7 +27,7 @@ $op_id = "NX-" . date('Ymd') . "-" . strtoupper(substr(md5($user_id . time()), 0
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRANSACTION_SUCCESS | NEXUS.OS</title>
+    <title>TRANSACTION_SUCCESS | NEXUS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -190,7 +190,7 @@ $op_id = "NX-" . date('Ymd') . "-" . strtoupper(substr(md5($user_id . time()), 0
 
         <a href="dashboard.php" class="btn-nexus">Finalizar Sesión</a>
         
-        <p class="mt-4 mb-0 opacity-25 small mono" style="font-size: 8px; letter-spacing: 2px;">ENCRYPTED_BY_MICTLAN_PROTOCOL</p>
+        <p class="mt-4 mb-0 opacity-25 small mono" style="font-size: 8px; letter-spacing: 2px;">ENCRYPTED_NEXUS_PROTOCOL</p>
     </div>
 
 </body>
