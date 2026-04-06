@@ -1,9 +1,9 @@
 <?php 
-require '../includes/config.php';
+require 'config.php';
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -22,7 +22,7 @@ $mi_beneficiario = "NEXUS_SYSTEMS_INT";
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Cargar Fondos | NEXUS.OS</title>
+    <title>Cargar Fondos | NEXUS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -62,7 +62,7 @@ $mi_beneficiario = "NEXUS_SYSTEMS_INT";
 
 <div class="container deposit-container">
     <div class="mb-4 d-flex align-items-center justify-content-between">
-        <a href="../dashboard.php" class="text-decoration-none text-muted fw-bold small">
+        <a href="dashboard.php" class="text-decoration-none text-muted fw-bold small">
             <i class="fas fa-arrow-left me-2"></i> VOLVER_DASHBOARD
         </a>
         <span class="badge bg-dark text-info border border-info p-2 px-3">
@@ -72,8 +72,8 @@ $mi_beneficiario = "NEXUS_SYSTEMS_INT";
 
     <div class="card card-checkout">
         <div class="header-checkout">
-            <h5 class="fw-bold text-white mb-1" style="letter-spacing: 1px;">NEXUS_SAFE_PAY</h5>
-            <p class="small text-secondary mb-0">Seleccione un método de inyección de fondos</p>
+            <h5 class="fw-bold text-white mb-1" style="letter-spacing: 1px;">NEXUS_PAY</h5>
+            <p class="small text-secondary mb-0">Seleccione un método de pago</p>
         </div>
 
         <div class="p-3 border-bottom border-secondary">
@@ -152,7 +152,7 @@ $mi_beneficiario = "NEXUS_SYSTEMS_INT";
                         </div>
                     </div>
                     
-                    <button type="submit" class="btn-pay">EJECUTAR_PAGO_INSTANTÁNEO</button>
+                    <button type="submit" class="btn-pay">PAGAR</button>
                 </form>
             </div>
 
