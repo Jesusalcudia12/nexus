@@ -1,6 +1,6 @@
 <?php
 // public/perfil.php
-require '../includes/config.php';
+require 'config.php';
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -22,14 +22,14 @@ if (!empty($user['foto_perfil'])) {
 }
 
 // Generar Link de Referido dinámico
-$link_referido = "https://tu-dominio.com/public/registro.php?ref=" . $user['mi_codigo_referido'];
+$link_referido = "https://tu-dominio.com/registro.php?ref=" . $user['mi_codigo_referido'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS.OS | Expediente de Operador</title>
+    <title>NEXUS | Expediente</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -156,7 +156,7 @@ $link_referido = "https://tu-dominio.com/public/registro.php?ref=" . $user['mi_c
         <h4 class="fw-bold mb-0">NEXUS<span style="color: var(--nexus-purple);">.OS</span></h4>
     </div>
     <nav class="nav flex-column mt-3">
-        <a class="nav-link" href="../includes/dashboard.php"><i class="fa-solid fa-house-user me-2"></i> DASHBOARD</a>
+        <a class="nav-link" href="dashboard.php"><i class="fa-solid fa-house-user me-2"></i> DASHBOARD</a>
         <a class="nav-link active" href="perfil.php"><i class="fa-solid fa-user-gear me-2"></i> PERFIL</a>
         <a class="nav-link" href="depositar.php"><i class="fa-solid fa-bolt me-2"></i> INVERTIR</a>
         <a class="nav-link" href="referidos.php"><i class="fa-solid fa-share-nodes me-2"></i> MI RED</a>
@@ -168,7 +168,7 @@ $link_referido = "https://tu-dominio.com/public/registro.php?ref=" . $user['mi_c
         <div class="col-lg-10">
             <div class="profile-card">
                 
-                <form action="../includes/update_profile.php" method="POST" enctype="multipart/form-data">
+                <form action="update_profile.php" method="POST" enctype="multipart/form-data">
                     <div class="text-center">
                         <div class="avatar-container">
                             <img src="<?php echo $foto_src; ?>" class="avatar-image" id="img-preview">
@@ -178,7 +178,7 @@ $link_referido = "https://tu-dominio.com/public/registro.php?ref=" . $user['mi_c
                             <input type="file" name="foto_perfil" id="foto_input" style="display: none;" onchange="previewImage(event)">
                         </div>
                         <h3 class="fw-bold mb-0 text-white"><?php echo $user['nombre'] . ' ' . $user['apellido']; ?></h3>
-                        <p class="text-secondary small mb-5">Operador Verificado • #<?php echo $user['mi_codigo_referido']; ?></p>
+                        <p class="text-secondary small mb-5">perfil Verificado • #<?php echo $user['mi_codigo_referido']; ?></p>
                     </div>
 
                     <div class="row">
@@ -226,7 +226,7 @@ $link_referido = "https://tu-dominio.com/public/registro.php?ref=" . $user['mi_c
                     </div>
 
                     <div class="text-center mt-3">
-                        <button type="submit" class="btn btn-update">ACTUALIZAR DATOS DE EXPEDIENTE</button>
+                        <button type="submit" class="btn btn-update">ACTUALIZAR DATOS DE PERFIL</button>
                     </div>
                 </form>
 
