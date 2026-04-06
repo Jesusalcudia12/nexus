@@ -4,7 +4,7 @@ require 'config.php';
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../public/login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -30,14 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['foto_perfil'])) {
             $stmt->send_long_data(0, $img_content);
 
             if ($stmt->execute()) {
-                header("Location: ../public/perfil.php?status=success");
+                header("Location: perfil.php?status=success");
             } else {
-                header("Location: ../public/perfil.php?status=error_db");
+                header("Location: perfil.php?status=error_db");
             }
         } else {
-            header("Location: ../public/perfil.php?status=too_large");
+            header("Location: perfil.php?status=too_large");
         }
     } else {
-        header("Location: ../public/perfil.php?status=error_file");
+        header("Location: perfil.php?status=error_file");
     }
 }
