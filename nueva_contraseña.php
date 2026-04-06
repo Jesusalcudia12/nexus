@@ -103,7 +103,7 @@ if (!isset($_SESSION['email_reset'])) {
 <body>
 
 <div class="reset-card">
-    <div class="brand-logo"><i class="fas fa-satellite-dish me-2" style="color:var(--nexus-blue)"></i>NEXUS<span>.OS</span></div>
+    <div class="brand-logo"><i class="fas fa-satellite-dish me-2" style="color:var(--nexus-blue)"></i>NEXUS<span></span></div>
     <h4 class="text-center fw-bold mb-4">Resetear Clave</h4>
 
     <?php if(isset($_GET['error'])): ?>
@@ -117,7 +117,7 @@ if (!isset($_SESSION['email_reset'])) {
         </div>
     <?php endif; ?>
 
-    <form action="auth/actualizar_password.php" method="POST">
+    <form action="actualizar_password.php" method="POST">
         <div class="mb-3">
             <label class="form-label small text-secondary fw-bold text-uppercase">Nueva Contraseña</label>
             <input type="password" name="pass1" class="form-control" placeholder="••••••••" required autofocus>
@@ -128,11 +128,11 @@ if (!isset($_SESSION['email_reset'])) {
             <input type="password" name="pass2" class="form-control" placeholder="••••••••" required>
         </div>
 
-        <button type="submit" class="btn btn-nexus w-100">ACTUALIZAR NEXUS</button>
+        <button type="submit" class="btn btn-nexus w-100">ACTUALIZAR</button>
     </form>
 
     <div class="text-center mt-4">
-        <p class="small text-secondary mb-0">© 2025 Nixo. Protocolo de Seguridad Activo.</p>
+        <p class="small text-secondary mb-0">© 2025 Nexu. Protocolo de Seguridad Activo.</p>
     </div>
 </div>
 
