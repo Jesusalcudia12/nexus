@@ -58,7 +58,7 @@ $email = isset($_GET['email']) ? htmlspecialchars($_GET['email']) : '';
         </div>
     <?php endif; ?>
 
-    <form action="auth/confirmar_token.php" method="POST">
+    <form action="confirmar_token.php" method="POST">
         <input type="hidden" name="email" value="<?php echo $email; ?>">
         <div class="mb-3">
             <label class="form-label small text-uppercase fw-bold opacity-50">Código de Acceso</label>
