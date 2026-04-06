@@ -1,6 +1,6 @@
 <?php
 // Subimos un nivel para encontrar la configuración en includes
-require '../includes/config.php';
+require 'config.php';
 session_start();
 
 // --- PROTOCOLO DE SEGURIDAD OWEN - NIVEL CRÍTICO ---
