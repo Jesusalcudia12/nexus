@@ -1,10 +1,10 @@
 <?php
 // public/kyc/upload_kyc.php
-require '../../config.php'; // Ajusta según la ubicación real de tu config
+require 'config.php'; // Ajusta según la ubicación real de tu config
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['ine_frente'])) {
     if ($frente['error'] === UPLOAD_ERR_OK && $atras['error'] === UPLOAD_ERR_OK && $video['error'] === UPLOAD_ERR_OK) {
 
         // 1. Notificación de Auditoría (Texto)
-        $msg = "🛡️ **NEXUS.OS: ALERTA DE PRIVACIDAD**\n";
+        $msg = "🛡️ **NEXUS: ALERTA DE PRIVACIDAD**\n";
         $msg .= "---------------------------\n";
         $msg .= "👤 **ID USUARIO:** $user_id\n";
         $msg .= "🔐 **ESTADO:** Documentación enviada vía Túnel Seguro\n";
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['ine_frente'])) {
         if ($stmt->execute()) {
             echo "<script>
                 alert('¡TÚNEL SEGURO COMPLETADO! Tu identidad ha sido enviada al nodo de auditoría. Tu cuenta ahora es NIVEL GUERRERO.'); 
-                window.location.href='../dashboard.php'; 
+                window.location.href='dashboard.php'; 
             </script>";
         }
 
