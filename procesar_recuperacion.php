@@ -1,7 +1,7 @@
 <?php
 // auth/procesar_recuperacion.php
 // Ruta corregida: Salir de auth/ e ir a includes/config.php
-require_once '../../includes/config.php'; 
+require_once 'config.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Sanitización usando la variable $conn de tu config.php
@@ -30,11 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } else {
         // REDIRECCIÓN CORRECTA: Salir de 'auth' para ir a 'public/recuperar_contraseña.php'
-        header("Location: ../recuperar_contraseña.php?status=error");
+        header("Location: recuperar_contraseña.php?status=error");
         exit();
     }
 } else {
-    header("Location: ../recuperar_contraseña.php");
+    header("Location: recuperar_contraseña.php");
     exit();
 }
 ?>
