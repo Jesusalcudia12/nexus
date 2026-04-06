@@ -1,6 +1,6 @@
 <?php
 // Subimos un nivel para encontrar la configuración en includes
-require '../includes/config.php';
+require 'config.php';
 header('Content-Type: application/json');
 
 /**
@@ -10,7 +10,7 @@ header('Content-Type: application/json');
 
 // 1. PROTOCOLO DE AUTENTICACIÓN POR LLAVE
 // Define tu llave en config.php o cámbiala aquí directamente
-$master_key = "ALCUDIA_2026"; 
+$master_key = "246810"; 
 $provided_key = isset($_GET['key']) ? $_GET['key'] : '';
 
 if ($provided_key !== $master_key) {
