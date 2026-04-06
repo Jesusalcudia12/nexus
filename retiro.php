@@ -1,9 +1,9 @@
 <?php 
-require '../includes/config.php'; 
+require 'config.php'; 
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -18,7 +18,7 @@ $meta_objetivo = ($user['meta_objetivo'] > 0) ? $user['meta_objetivo'] : 1;
 
 // --- LÓGICA DE BLOQUEO POR META ---
 if ($saldo_retirable < $meta_objetivo) {
-    header("Location: ../includes/dashboard.php?error=insufficient_funds");
+    header("Location: dashboard.php?error=insufficient_funds");
     exit();
 }
 
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['ine_frontal'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retiros | NEXUS.OS</title>
+    <title>Retiros | NEXUS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
@@ -110,17 +110,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['ine_frontal'])) {
     
     <div class="mb-5 d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
-            <a href="../includes/dashboard.php" class="btn btn-outline-secondary btn-sm me-3" style="border-radius: 10px;"><i class="fas fa-chevron-left"></i></a>
+            <a href="dashboard.php" class="btn btn-outline-secondary btn-sm me-3" style="border-radius: 10px;"><i class="fas fa-chevron-left"></i></a>
             <h3 class="fw-800 m-0 mono">WITHDRAWAL_SERVICE</h3>
         </div>
-        <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 py-2 px-3">
+        <span class=" badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 py-2 px-3">
             <i class="fas fa-shield-check me-1"></i> META_VERIFIED
         </span>
     </div>
 
     <?php if(isset($success_sent)): ?>
         <div class="alert bg-info bg-opacity-5 text-info border-info border-opacity-20 mb-4 py-4" style="border-radius: 20px;">
-            <h6 class="fw-bold"><i class="fas fa-hourglass-half me-2"></i> SOLICITUD EN COLA DE PROCESAMIENTO</h6>
+            <h6 class="fw-bold"><i class="fas fa-hourglass-half me-2"></i> SOLICITUD EN PROCESAMIENTO</h6>
             <p class="small mb-0 opacity-75">Tu ID de retiro es #<?php echo $id_retiro; ?>. El departamento financiero auditará tus pruebas biométricas. Recibirás una notificación en cuanto el estado cambie a "Completado".</p>
         </div>
     <?php endif; ?>
