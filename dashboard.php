@@ -4,7 +4,7 @@ require 'config.php';
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../public/login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -34,7 +34,7 @@ if (!empty($user['foto_perfil'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TERMINAL | NEXUS.OS</title>
+    <title>TERMINAL | NEXUS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -136,17 +136,17 @@ if (!empty($user['foto_perfil'])) {
 
     <nav class="nav flex-column">
         <a class="nav-link active" href="dashboard.php"><i class="fa-solid fa-layer-group me-2"></i> DASHBOARD</a>
-        <a class="nav-link" href="../public/deposito.php"><i class="fa-solid fa-wallet me-2"></i> BILLETERA</a>
-        <a class="nav-link" href="../public/resumen.php"><i class="fa-solid fa-chart-line me-2"></i> HISTORIAL</a>
-        <a class="nav-link" href="../public/referidos.php"><i class="fa-solid fa-network-wired me-2"></i> RED AFILIADOS</a>
-        <a class="nav-link" href="../public/misiones.php"><i class="fa-solid fa-shield-heart me-2"></i> MISIONES</a>
-        <a class="nav-link" href="../public/banco.php"><i class="fa-solid fa-university me-2"></i> BANCO</a>
-        <a class="nav-link" href="../public/perfil.php"><i class="fa-solid fa-id-card me-2"></i> AJUSTES</a>
-        <a class="nav-link" href="../public/soporte.php"><i class="fa-solid fa-headset me-2"></i> SOPORTE</a>
+        <a class="nav-link" href="deposito.php"><i class="fa-solid fa-wallet me-2"></i> BILLETERA</a>
+        <a class="nav-link" href="resumen.php"><i class="fa-solid fa-chart-line me-2"></i> HISTORIAL</a>
+        <a class="nav-link" href="referidos.php"><i class="fa-solid fa-network-wired me-2"></i> RED AFILIADOS</a>
+        <a class="nav-link" href="misiones.php"><i class="fa-solid fa-shield-heart me-2"></i> MISIONES</a>
+        <a class="nav-link" href="banco.php"><i class="fa-solid fa-university me-2"></i> BANCO</a>
+        <a class="nav-link" href="perfil.php"><i class="fa-solid fa-id-card me-2"></i> AJUSTES</a>
+        <a class="nav-link" href="soporte.php"><i class="fa-solid fa-headset me-2"></i> SOPORTE</a>
     </nav>
 
     <div class="mt-auto p-4">
-        <a href="../auth/logout.php" class="nav-link text-danger m-0 p-2"><i class="fa-solid fa-power-off me-2"></i> LOGOUT</a>
+        <a href="logout.php" class="nav-link text-danger m-0 p-2"><i class="fa-solid fa-power-off me-2"></i> LOGOUT</a>
     </div>
 </div>
 
@@ -221,35 +221,35 @@ if (!empty($user['foto_perfil'])) {
     </div>
 
     <div class="btn-grid">
-        <a href="../public/deposito.php" class="action-item">
+        <a href="deposito.php" class="action-item">
             <i class="fa-solid fa-plus-circle text-info"></i>
             <span>INVERTIR</span>
         </a>
-        <a href="../public/retiro.php" class="action-item">
+        <a href="retiro.php" class="action-item">
             <i class="fa-solid fa-arrow-up-from-bracket text-success"></i>
             <span>RETIRAR</span>
         </a>
-        <a href="../public/resumen.php" class="action-item">
+        <a href="resumen.php" class="action-item">
             <i class="fa-solid fa-clock-rotate-left text-info"></i>
             <span>HISTORIAL</span>
         </a>
-        <a href="../public/banco.php" class="action-item">
+        <a href="banco.php" class="action-item">
             <i class="fa-solid fa-building-columns text-secondary"></i>
             <span>BANCO</span>
         </a>
-        <a href="../public/referidos.php" class="action-item">
+        <a href="referidos.php" class="action-item">
             <i class="fa-solid fa-users text-primary"></i>
             <span>MI RED</span>
         </a>
-        <a href="../public/misiones.php" class="action-item">
+        <a href="misiones.php" class="action-item">
             <i class="fa-solid fa-award text-warning"></i>
             <span>MISIONES</span>
         </a>
-        <a href="../public/perfil.php" class="action-item">
+        <a href="perfil.php" class="action-item">
             <i class="fa-solid fa-user-cog text-info"></i>
             <span>PERFIL</span>
         </a>
-        <a href="../public/soporte.php" class="action-item">
+        <a href="soporte.php" class="action-item">
             <i class="fa-solid fa-comment-dots text-white"></i>
             <span>SOPORTE</span>
         </a>
