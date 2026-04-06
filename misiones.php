@@ -1,6 +1,6 @@
 <?php
 // Ruta corregida: Salimos de 'public' para entrar a 'includes'
-require '../includes/config.php'; 
+require 'config.php'; 
 session_start();
 
 // Si el usuario no está logueado, regresamos al login (asumiendo que está en la raíz o en public)
@@ -21,7 +21,7 @@ $stmt_ref->execute();
 $total_referidos_activos = $stmt_ref->get_result()->fetch_assoc()['total'];
 
 // 3. Configuración de Metas
-$meta_referidos = 5; 
+$meta_referidos = 50; 
 $porcentaje_ref = min(100, ($total_referidos_activos / $meta_referidos) * 100);
 ?>
 
@@ -30,7 +30,7 @@ $porcentaje_ref = min(100, ($total_referidos_activos / $meta_referidos) * 100);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misiones | NEXUS CORE</title>
+    <title>ganancias | NEXUS CORE</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
