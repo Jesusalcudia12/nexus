@@ -1,6 +1,6 @@
 <?php
 // registro.php
-require '../includes/config.php';
+require 'config.php';
 session_start();
 
 // Si ya tiene sesión, mandarlo al dashboard
@@ -19,7 +19,7 @@ if (isset($_GET['ref'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS - Registro de Nodo</title>
+    <title>NEXUS - Registro</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -164,7 +164,7 @@ if (isset($_GET['ref'])) {
         </div>
     <?php endif; ?>
 
-    <form action="auth/procesar_registro.php" method="POST">
+    <form action="procesar_registro.php" method="POST">
         <div class="row g-3">
             <div class="col-md-6">
                 <label class="form-label small text-secondary fw-bold text-uppercase">Nombre</label>
@@ -212,7 +212,7 @@ if (isset($_GET['ref'])) {
 
     <div class="text-center mt-4 footer-links">
         <p class="small text-secondary">¿YA TIENES UNA CUENTA? <a href="login.php" class="fw-bold">INICIAR SESIÓN</a></p>
-        <p class="legal-text mt-4 mb-0">© 2025 Nixo. Todos los derechos reservados.</p>
+        <p class="legal-text mt-4 mb-0">© 2025 NEXU. Todos los derechos reservados.</p>
     </div>
 </div>
 
