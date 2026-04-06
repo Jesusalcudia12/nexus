@@ -1,6 +1,6 @@
 <?php
 // procesar_pago_openpay.php
-require '../includes/config.php';
+require 'config.php';
 session_start();
 
 // 1. PROTOCOLO DE SEGURIDAD
