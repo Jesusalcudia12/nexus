@@ -1,6 +1,6 @@
 <?php
 // Solo mantenemos la detección de referido para no perder el rastro del socio
-require '../includes/config.php';
+require 'config.php';
 session_start();
 
 if (isset($_GET['ref'])) {
@@ -12,7 +12,7 @@ if (isset($_GET['ref'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS - Tu Conexión Elite al Éxito Financiero</title>
+    <title>NEXUS - Tu Conexión al Éxito Financiero</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -111,7 +111,7 @@ if (isset($_GET['ref'])) {
 
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="fas fa-satellite-dish me-2" style="color:var(--nexus-blue)"></i>NEXUS<span>.OS</span></a>
+            <a class="navbar-brand" href="#"><i class="fas fa-satellite-dish me-2" style="color:var(--nexus-blue)"></i>NEXUS<span></span></a>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
@@ -122,7 +122,7 @@ if (isset($_GET['ref'])) {
                 
                 <div class="d-flex align-items-center">
                     <a href="login.php" class="btn-access text-decoration-none">Login</a>
-                    <a href="registro.php" class="btn-start text-decoration-none">REGISTRO</a>
+                    <a href="registro.php" class="btn-start text-decoration-none">Registro</a>
                 </div>
             </div>
         </div>
@@ -154,14 +154,14 @@ if (isset($_GET['ref'])) {
                     <div class="feature-card">
                         <i class="fas fa-shield-alt mb-3 fs-1 text-info"></i>
                         <h3>Seguridad Blindada</h3>
-                        <p class="text-secondary">Protección de grado militar AES-256 para cada uno de tus activos y datos.</p>
+                        <p class="text-secondary">Protección  AES-256 para cada uno de tus activos y datos.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-card">
                         <i class="fas fa-bolt mb-3 fs-1 text-info"></i>
                         <h3>Resultados Reales</h3>
-                        <p class="text-secondary">Sin simulaciones. Cada movimiento impacta directamente en tu balance operativo.</p>
+                        <p class="text-secondary">Cada movimiento impacta directamente en tu balance operativo.</p>
                     </div>
                 </div>
             </div>
@@ -189,7 +189,7 @@ if (isset($_GET['ref'])) {
     </section>
 
     <footer class="py-5 text-center border-top border-secondary mt-5">
-        <p class="mb-0">© 2026 NEXUS.OS - Conexión de Seguridad Blindada.</p>
+        <p class="mb-0">© 2026 NEXUS - Conexión de Seguridad Blindada.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
