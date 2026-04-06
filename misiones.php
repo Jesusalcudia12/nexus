@@ -133,7 +133,7 @@ $porcentaje_ref = min(100, ($total_referidos_activos / $meta_referidos) * 100);
     <div class="d-flex justify-content-between align-items-center mb-5">
         <div>
             <h1 class="fw-800 text-white mb-0" style="letter-spacing: -2px; font-size: 2.5rem;">NEXUS <span style="color: var(--nexus-blue);">REWARDS</span></h1>
-            <p class="mono small text-muted opacity-50">LOCATION: /PUBLIC/MISIONES.PHP</p>
+            <p class="mono small text-muted opacity-50">LOCATION: misiones.php</p>
         </div>
         <div class="d-flex gap-2">
             <a href="dashboard.php" class="btn-outline-nexus text-uppercase" style="font-size: 0.7rem;">Dashboard</a>
@@ -205,7 +205,7 @@ $porcentaje_ref = min(100, ($total_referidos_activos / $meta_referidos) * 100);
 <script>
 function copyRef() {
     // Genera el link apuntando a registro.php en la misma carpeta public
-    const url = window.location.origin + "/public/registro.php?ref=<?php echo $user['codigo_referido']; ?>";
+    const url = window.location.origin + "registro.php?ref=<?php echo $user['codigo_referido']; ?>";
     navigator.clipboard.writeText(url).then(() => {
         alert("SISTEMA: Enlace copiado. ¡Comparte y gana!");
     });
