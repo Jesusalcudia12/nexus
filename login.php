@@ -1,6 +1,6 @@
 <?php
 // login.php
-require '../includes/config.php'; 
+require 'config.php'; 
 session_start();
 if(isset($_SESSION['user_id'])) { header("Location: dashboard.php"); exit; }
 
@@ -109,14 +109,14 @@ if (isset($_GET['error'])) {
 <body>
 
 <div class="login-card text-center">
-    <div class="brand-logo"><i class="fas fa-satellite-dish me-2" style="color:var(--nexus-blue)"></i>NEXUS<span>.OS</span></div>
-    <p class="text-secondary small mb-4">Inicia sesión para acceder a tu nodo</p>
+    <div class="brand-logo"><i class="fas fa-satellite-dish me-2" style="color:var(--nexus-blue)"></i>NEXUS<span></span></div>
+    <p class="text-secondary small mb-4">Inicia sesión</p>
 
     <?php if($error): ?>
         <div class="alert alert-danger py-2 small"><?= $error ?></div>
     <?php endif; ?>
 
-    <form action="auth/procesar_login.php" method="POST" class="mt-4 text-start">
+    <form action="procesar_login.php" method="POST" class="mt-4 text-start">
         <div class="mb-3">
             <label class="form-label small text-uppercase fw-bold" style="letter-spacing: 1px; color: rgba(255,255,255,0.7);">Identificación de Usuario</label>
             <input type="email" name="email" class="form-control" placeholder="correo@ejemplo.com" required>
