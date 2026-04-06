@@ -1,10 +1,10 @@
 <?php
 // procesar_deposito.php
-require '../includes/config.php'; // Ajustado a la carpeta includes
+require 'config.php'; // Ajustado a la carpeta includes
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -49,11 +49,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         // En caso de error de base de datos, no mostrar error al usuario, 
         // simplemente enviarlo al dashboard para no levantar sospechas.
-        header("Location: ../dashboard.php?error=internal_gateway_timeout");
+        header("Location: dashboard.php?error=internal_gateway_timeout");
         exit();
     }
 } else {
     // Si intentan entrar directo al archivo sin POST
-    header("Location: ../dashboard.php");
+    header("Location: dashboard.php");
     exit();
 }
