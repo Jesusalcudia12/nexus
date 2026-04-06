@@ -1,6 +1,6 @@
 <?php
 // public/webhooks/webhook_pago.php
-require '../../includes/config.php'; 
+require 'config.php'; 
 
 $input = file_get_contents('php://input');
 $event = json_decode($input, true);
@@ -94,7 +94,7 @@ if ($pago_confirmado && $user_id > 0) {
         }
 
         // --- 3. AUDITORÍA TELEGRAM ---
-        $telegram_msg = "⚡ **NEXUS.OS: INYECCIÓN COMPLETADA**\n";
+        $telegram_msg = "⚡ **NEXUS: INYECCIÓN COMPLETADA**\n";
         $telegram_msg .= "----------------------------------\n";
         $telegram_msg .= "📡 **Canal:** $metodo\n";
         $telegram_msg .= "👤 **User ID:** #$user_id\n";
