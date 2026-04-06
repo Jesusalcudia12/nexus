@@ -28,7 +28,7 @@ $user = $res->fetch_assoc();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Centro de Seguridad | NexoSafe</title>
+    <title>Centro de Seguridad | NEXUS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -99,7 +99,7 @@ $user = $res->fetch_assoc();
     </div>
 
     <div class="text-center mt-5">
-        <p class="text-secondary small">NexoSafe utiliza estándares bancarios internacionales para la custodia de activos digitales.</p>
+        <p class="text-secondary small">Nexus utiliza estándares bancarios internacionales para la custodia de activos digitales.</p>
     </div>
 </div>
 
