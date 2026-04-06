@@ -121,7 +121,7 @@ $cuentas = $conn->query("SELECT * FROM datos_bancarios WHERE usuario_id = $user_
 <div class="container" style="max-width: 950px;">
     
     <div class="d-flex align-items-center mb-5">
-        <a href="../dashboard.php" class="btn-back me-3 text-decoration-none">
+        <a href="dashboard.php" class="btn-back me-3 text-decoration-none">
             <i class="fas fa-arrow-left"></i>
         </a>
         <div>
