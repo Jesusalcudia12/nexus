@@ -1,6 +1,6 @@
 <?php
 // Ajuste de ruta: Subimos un nivel para entrar a includes
-require '../includes/config.php';
+require 'config.php';
 session_start();
 
 // --- CONFIGURACIÓN DE SEGURIDAD OWEN ---
