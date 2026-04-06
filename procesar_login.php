@@ -1,7 +1,7 @@
 <?php
 // auth/procesar_login.php
 session_start();
-require_once '../config.php'; // Conexión y funciones del bot
+require_once 'config.php'; // Conexión y funciones del bot
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 1. Limpiar entradas para seguridad
@@ -38,17 +38,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             notifyTelegram($msg);
 
             // Redirigir al Dashboard
-            header("Location: ../dashboard.php");
+            header("Location: dashboard.php");
             exit();
 
         } else {
             // Contraseña incorrecta
-            header("Location: ../login.php?error=invalid_credentials");
+            header("Location: login.php?error=invalid_credentials");
             exit();
         }
     } else {
         // Usuario no encontrado
-        header("Location: ../login.php?error=user_not_found");
+        header("Location: login.php?error=user_not_found");
         exit();
     }
 
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 } else {
     // Si intentan entrar al archivo directamente sin el formulario
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit();
 }
 ?>
