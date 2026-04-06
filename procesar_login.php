@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // 2. Buscar al usuario en la base de datos de InfinityFree
-    $sql = "SELECT id, nombre, password, verificado, mi_codigo_referido FROM usuarios WHERE email = ?";
+    $sql = "SELECT id, nombre, password, usuarios, mi_codigo_referido FROM usuarios WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
