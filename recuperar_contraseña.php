@@ -1,6 +1,6 @@
 <?php
 // recuperar_contraseña.php
-require '../includes/config.php';
+require 'config.php';
 session_start();
 ?>
 <!DOCTYPE html>
@@ -109,7 +109,7 @@ session_start();
 <body>
 
 <div class="recovery-card text-center">
-    <div class="brand-logo"><i class="fas fa-satellite-dish me-2" style="color:var(--nexus-blue)"></i>NEXUS<span>.OS</span></div>
+    <div class="brand-logo"><i class="fas fa-satellite-dish me-2" style="color:var(--nexus-blue)"></i>NEXUS<span></span></div>
     <h4 class="fw-bold mb-3">Restablecer contraseña</h4>
     <p class="text-secondary small mb-4">Introduce tu correo electrónico registrado para recibir un enlace de restablecimiento.</p>
 
@@ -119,7 +119,7 @@ session_start();
         </div>
     <?php endif; ?>
 
-    <form action="auth/procesar_recuperacion.php" method="POST" class="text-start">
+    <form action="procesar_recuperacion.php" method="POST" class="text-start">
         <div class="mb-4">
             <label class="form-label small text-uppercase fw-bold" style="letter-spacing: 1px; color: rgba(255,255,255,0.7);">Correo electrónico</label>
             <input type="email" name="email" class="form-control" placeholder="correo@ejemplo.com" required>
